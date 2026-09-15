@@ -1,0 +1,30 @@
+{
+  "assessment_version": "rebuild-charis",
+  "variant": "A",
+  "files": {
+    "application_transactions.csv": {
+      "sha256": "7562dafdac4929ecd965d04bf0c852a55fc9f6a3339da781c9b67bb3a63a865b",
+      "rows_excluding_header": 258
+    },
+    "capacity_records.csv": {
+      "sha256": "5dc91e33e2bf523ca295bc07f125d12f80698208cb5f96e655f8d3e262a0580a",
+      "rows_excluding_header": 30
+    },
+    "customers.csv": {
+      "sha256": "4b6602e13234795d0db45dfa33680a0133c1926363116461afbd1f169dc67e3e",
+      "rows_excluding_header": 80
+    },
+    "finance_control_totals.csv": {
+      "sha256": "b0f406f3731635c762131f6c87491d7c7d3762f082a09ab72b0756e370ad10e7",
+      "rows_excluding_header": 6
+    },
+    "fx_rates.csv": {
+      "sha256": "7a9faaa3cf2c062c08c013d2e64576676477b7baed68a9a2ccb6c9b8a2054b73",
+      "rows_excluding_header": 18
+    },
+    "manual_adjustments.csv": {
+      "sha256": "90e465cdef03c06f90c04781674f9cf7693079ff9ed607044b38d14dfd3616e6",
+      "rows_excluding_header": 31
+    }
+  }
+}

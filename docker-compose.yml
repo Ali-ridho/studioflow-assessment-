@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  # Database metadata KHUSUS Airflow (TERPISAH dari studioflow-postgres)
+  # TIDAK expose port ke host sama sekali -> tidak mungkin bentrok port
+  airflow-metadata-db:
+    image: postgres:16
+    container_name: airflow-metadata-db
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    networks:
+      - studioflow-net
+    volumes:
+      - airflow-metadata-volume:/var/lib/postgresql/data
+
+  airflow-standalone:
+    image: apache/airflow:2.9.3
+    container_name: airflow-standalone
+    depends_on:
+      - airflow-metadata-db
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-metadata-db:5432/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      # Install library tambahan otomatis saat container start
+      _PIP_ADDITIONAL_REQUIREMENTS: "psycopg2-binary pandas python-dotenv apache-airflow-providers-postgres"
+    ports:
+      - "8080:8080"
+    networks:
+      - studioflow-net
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./seeds:/opt/airflow/seeds
+      - ./sql:/opt/airflow/sql
+      - ./src:/opt/airflow/src
+    command: standalone
+
+networks:
+  studioflow-net:
+    external: true
+
+volumes:
+  airflow-metadata-volume:

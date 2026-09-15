@@ -1,0 +1,7 @@
+month_start,application_net_revenue_usd,manual_net_revenue_usd,expected_net_revenue_usd,expected_application_record_count,expected_manual_record_count
+2026-01-01,1506.56,37.98,1544.54,35,3
+2026-02-01,1578.20,0.00,1578.20,38,0
+2026-03-01,1503.40,90.00,1593.40,35,3
+2026-04-01,1580.94,105.22,1686.16,37,3
+2026-05-01,1614.47,141.97,1756.44,38,3
+2026-06-01,1615.40,84.00,1699.40,38,2
