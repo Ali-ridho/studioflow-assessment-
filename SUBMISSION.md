@@ -2,7 +2,7 @@
 
 **Active time spent:** [9-10 hours]
 
-**Recorded demo link or delivery method:** [private link, attachment name, or delivery method]
+**Recorded demo link or delivery method:** https://drive.google.com/file/d/12-w1JaRTUDPlWnDmDG8NbxPbPcKTkS2D/view?usp=sharing
 
 ## 1. What I built
 
